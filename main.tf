@@ -7,10 +7,15 @@ terraform {
   }
 }
 provider "aws" {
-  region = "ap-north-east-2"
+  region = "ap-northeast-2"
+  profile = "leehee-eks"
   default_tags {
     tags = {
-      Name = "architect-demo"
+      Name = "leehee-iac"
     }
   }
+}
+
+resource "aws_vpc" "main" {
+  cidr_block       = "10.0.0.0/16"
 }
